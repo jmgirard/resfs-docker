@@ -1,0 +1,19 @@
+services:
+  resfs:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      - DOPPLER_TOKEN
+      - PASSWORD
+      - SMB_USER
+      - SMB_PASS
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+      - NET_ADMIN
+    entrypoint: ["/bin/bash", "-c", "doppler run -- /bin/bash -c '/usr/local/bin/mount.sh && exec /init'"]
+    volumes:
+      - /mnt/datasets:/mnt/datasets
+      - /mnt/projects:/mnt/projects
+      - /var/run/docker.sock:/var/run/docker.sock
