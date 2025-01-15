@@ -1,5 +1,5 @@
 ## Initial Setup
-- Sign up for a [Doppler](https://doppler.com) account
+- Sign up for a free developer [Doppler](https://doppler.com) account
 - Sign in and go to Projects
 - Create new project called `resfs`
 - Go to Development > dev_personal > Secrets (tab)
