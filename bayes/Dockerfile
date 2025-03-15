@@ -1,4 +1,4 @@
-FROM jmgirard/rocker-bayes:4.4.2-amd64
+FROM jmgirard/rocker-bayes:4.4.3-amd64
 
 # Copy mount script to container
 COPY mount.sh /usr/local/bin/mount.sh
