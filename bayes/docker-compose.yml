@@ -1,6 +1,8 @@
 services:
   resfs:
-    build: .
+    build: 
+      context: ../
+      dockerfile: bayes/Dockerfile
     ports:
       - "8787:8787"
     environment:
@@ -14,6 +16,7 @@ services:
       - NET_ADMIN
     entrypoint: ["/bin/bash", "-c", "doppler run -- /bin/bash -c '/usr/local/bin/mount.sh && exec /init'"]
     volumes:
+      - ../scripts:/scripts:ro
       - /mnt/datasets:/mnt/datasets
       - /mnt/projects:/mnt/projects
       - /var/run/docker.sock:/var/run/docker.sock

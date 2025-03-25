@@ -1,6 +1,8 @@
 services:
   resfs:
-    build: .
+    build: 
+      context: ../
+      dockerfile: whisper/Dockerfile
     ports:
       - "8787:8787"
     environment:
@@ -20,6 +22,7 @@ services:
       - DAC_READ_SEARCH
     entrypoint: ["/bin/bash", "-c", "doppler run -- /bin/bash -c '/setup_scripts/install_whisper.sh && /usr/local/bin/mount.sh && exec /init'"]
     volumes:
+      - ../scripts:/scripts:ro
       - /mnt/datasets:/mnt/datasets
       - /mnt/projects:/mnt/projects
       - /var/run/docker.sock:/var/run/docker.sock
