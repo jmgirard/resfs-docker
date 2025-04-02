@@ -1,7 +1,7 @@
-FROM jmgirard/wsl-cuda-whisper:novad
+FROM jmgirard/wsl-whisper
 
 # Copy mount script to container
-COPY mount.sh /usr/local/bin/mount.sh
+COPY ../scripts/mount.sh /usr/local/bin/mount.sh
 RUN chmod +x /usr/local/bin/mount.sh
 
 # Install dependencies

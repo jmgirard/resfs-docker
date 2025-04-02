@@ -20,7 +20,8 @@ services:
     cap_add:
       - SYS_ADMIN
       - DAC_READ_SEARCH
-    entrypoint: ["/bin/bash", "-c", "doppler run -- /bin/bash -c '/setup_scripts/install_whisper.sh && /usr/local/bin/mount.sh && exec /init'"]
+      - NET_ADMIN
+    entrypoint: ["/bin/bash", "-c", "doppler run -- /bin/bash -c '/usr/local/bin/mount.sh && exec /init'"]
     volumes:
       - ../scripts:/scripts:ro
       - /mnt/datasets:/mnt/datasets
