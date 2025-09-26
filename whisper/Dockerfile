@@ -1,7 +1,7 @@
-FROM jmgirard/wsl-whisper
+FROM jmgirard/wsl-whisper:latest
 
 # Copy mount script to container
-COPY ../scripts/mount.sh /usr/local/bin/mount.sh
+COPY scripts/mount.sh /usr/local/bin/mount.sh
 RUN chmod +x /usr/local/bin/mount.sh
 
 # Install dependencies

@@ -1,7 +1,7 @@
-FROM jmgirard/rocker-bayes:noble-amd64
+FROM jmgirard/rocker-bayes
 
 # Copy mount script to container
-COPY ../scripts/mount.sh /usr/local/bin/mount.sh
+COPY scripts/mount.sh /usr/local/bin/mount.sh
 RUN chmod +x /usr/local/bin/mount.sh
 
 # Install dependencies
