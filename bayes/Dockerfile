@@ -1,5 +1,8 @@
 FROM jmgirard/rocker-bayes
 
+# Address system error 22
+RUN echo "lock-type=linkbased" > /etc/rstudio/file-locks
+
 # Copy mount script to container
 COPY scripts/mount.sh /usr/local/bin/mount.sh
 RUN chmod +x /usr/local/bin/mount.sh
